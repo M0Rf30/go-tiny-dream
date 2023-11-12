@@ -1,0 +1,6 @@
+[submodule "tiny-dream"]
+	path = tiny-dream
+	url = https://github.com/symisc/tiny-dream
+[submodule "ncnn"]
+	path = ncnn
+	url = https://github.com/Tencent/ncnn
