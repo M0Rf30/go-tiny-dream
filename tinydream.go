@@ -1,7 +1,7 @@
 package tinydream
 
-// #cgo CXXFLAGS: -I./ncnn/build/install/include -I./tiny-dream -I/usr/include
-// #cgo LDFLAGS: -L./ncnn/build/install/lib -ltinydream -lm -lstdc++
+// #cgo CXXFLAGS: -I${SRCDIR} -I${SRCDIR}/ncnn/build/install/include -I./tiny-dream -O3 -DNDEBUG -std=c++17 -fPIC
+// #cgo LDFLAGS: -L${SRCDIR} -L${SRCDIR}/ncnn/build/install/lib -lm -lstdc++ -ltinydream
 // #include "tinydream.h"
 // #include <stdlib.h>
 import "C"
