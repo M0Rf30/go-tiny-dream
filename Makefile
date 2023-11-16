@@ -6,13 +6,12 @@ BUILD_TYPE?=
 # keep standard at C11 and C++11
 CFLAGS   = -I./ncnn/build/install/include -I. -I./tiny-dream -O3 -DNDEBUG -std=c11 -fPIC
 CXXFLAGS = -I./ncnn/build/install/include -I. -I./tiny-dream -O3 -DNDEBUG -std=c++17 -fPIC
-LDFLAGS  = 
+LDFLAGS  =
 TINY_CXXFLAGS = -I./ncnn/build/install/include -I. -I./tiny-dream -funsafe-math-optimizations -Ofast -flto=auto -funroll-all-loops -pipe -march=native -std=c++17 -Wextra -lstdc++ -pthread -flto -fopt-info-vec-optimized -fPIC
 
 # warnings
 CFLAGS   += -Wall -Wextra -Wpedantic -Wcast-qual -Wdouble-promotion -Wshadow -Wstrict-prototypes -Wpointer-arith -Wno-unused-function
 CXXFLAGS += -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function
-
 #
 # Print build information
 #
