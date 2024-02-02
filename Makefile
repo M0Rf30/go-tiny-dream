@@ -25,7 +25,7 @@ tinydream.o: ncnn/build/install/lib/libncnn.a
 	$(CXX) $(TINY_CXXFLAGS) tinydream.cpp -o tinydream.o -c $(LDFLAGS)
 
 unpack: ncnn/build/install/lib/libncnn.a
-	mkdir -p unpack && cd unpack && ar x ../ncnn/build/install/lib/libncnn.a
+	mkdir -p unpack && cd unpack && ar x ../ncnn/build/install/lib/libncnn.a && rm __.SYMDEF
 
 libtinydream.a: tinydream.o unpack $(EXTRA_TARGETS)
 	ar src libtinydream.a tinydream.o $(shell ls unpack/* | xargs echo)
