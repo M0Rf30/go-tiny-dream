@@ -6,7 +6,11 @@ BUILD_TYPE?=
 CFLAGS   = -I./ncnn -I./ncnn/src -I./ncnn/build/src/ -I. -I./tiny-dream -O3 -DNDEBUG -std=c11 -fPIC
 CXXFLAGS = -I./ncnn -I./ncnn/src -I./ncnn/build/src/ -I. -I./tiny-dream -O3 -DNDEBUG -std=c++17 -fPIC
 LDFLAGS  =
-TINY_CXXFLAGS = -I./ncnn -I./ncnn/src -I./ncnn/build/src/ -I. -I./tiny-dream -funsafe-math-optimizations -Ofast -flto=auto -funroll-all-loops -pipe -march=native -std=c++17 -Wextra -lstdc++ -pthread -flto -fopt-info-vec-optimized -fPIC
+TINY_CXXFLAGS = -I./ncnn -I./ncnn/src -I./ncnn/build/src/ -I. -I./tiny-dream -funsafe-math-optimizations -Ofast -flto=auto -funroll-all-loops -pipe -march=native -std=c++17 -Wextra -lstdc++ -pthread -flto -fPIC
+
+ifneq ($(BUILD_TYPE),hipblas)
+	TINY_CXXFLAGS += -fopt-info-vec-optimized
+endif
 
 # warnings
 CFLAGS   += -Wall -Wextra -Wpedantic -Wcast-qual -Wdouble-promotion -Wshadow -Wstrict-prototypes -Wpointer-arith -Wno-unused-function
